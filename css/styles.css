@@ -1,0 +1,65 @@
+:root{
+  --bg: #ffffff;
+  --fg: #111;
+  --muted: #666;
+  --accent: #2b6cb0;
+  --max-width: 1000px;
+}
+[data-theme="dark"]{
+  --bg: #0f1720;
+  --fg: #e6eef6;
+  --muted: #9aa8b8;
+  --accent: #5aa0ff;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+body{background:var(--bg);color:var(--fg);line-height:1.6}
+
+.container{max-width:var(--max-width);margin:0 auto;padding:1rem;}
+
+.site-header{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));backdrop-filter: blur(4px);}
+.header-inner{display:flex;align-items:center;gap:1rem;padding:0.8rem 1rem}
+.site-title{margin:0;font-size:1.1rem}
+.site-nav{margin-left:auto;display:flex;gap:0.75rem}
+.site-nav a{color:var(--fg);text-decoration:none;padding:0.4rem;border-radius:6px}
+.site-nav a:hover{background:rgba(0,0,0,0.05)}
+
+.theme-btn{margin-left:0.5rem;padding:0.4rem 0.6rem;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:transparent;cursor:pointer}
+
+.hero{position:relative;display:flex;align-items:center;gap:1rem;padding:1rem}
+.hero-img{width:160px;height:160px;object-fit:cover;border-radius:12px;flex-shrink:0}
+.hero-text h2{margin:0 0 0.4rem 0;font-size:1.4rem}
+.section{padding:1.2rem 0;border-top:1px solid rgba(0,0,0,0.04)}
+.grid{display:grid;gap:0.6rem}
+.gallery-grid{grid-template-columns:repeat(auto-fit,minmax(120px,1fr));align-items:center}
+
+.thumb{border:0;padding:0;background:transparent;cursor:pointer;border-radius:8px;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}
+.thumb:hover img{transform:scale(1.03)}
+
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;padding:1rem}
+.modal[aria-hidden="false"]{display:flex}
+.modal-content{position:relative;max-width:90%;max-height:90%}
+.modal-content img{max-width:100%;max-height:80vh;border-radius:8px;display:block}
+.modal-close{position:absolute;top:-14px;right:-14px;background:#fff;border-radius:999px;border:0;padding:6px 10px;cursor:pointer;font-size:18px}
+
+.news-list{list-style:none;padding:0;margin:0}
+.news-list li{padding:0.6rem 0;border-bottom:1px dashed rgba(0,0,0,0.04)}
+.muted{color:var(--muted);font-size:0.95rem}
+
+.site-footer{padding:1rem 0;border-top:1px solid rgba(0,0,0,0.04);margin-top:2rem;text-align:center;font-size:0.95rem}
+
+/* forms */
+form{display:grid;gap:0.6rem}
+label{display:block;font-weight:600}
+input[type="text"],input[type="email"],textarea{width:100%;padding:0.6rem;border:1px solid rgba(0,0,0,0.08);border-radius:6px;background:transparent;color:var(--fg)}
+.form-actions{display:flex;gap:0.6rem}
+button{cursor:pointer;padding:0.6rem 0.9rem;border-radius:6px;border:0;background:var(--accent);color:#fff}
+button.secondary{background:transparent;border:1px solid rgba(0,0,0,0.08);color:var(--fg)}
+
+/* responsive tweaks */
+@media (max-width:600px){
+  .header-inner{flex-direction:row;gap:0.5rem}
+  .hero{flex-direction:column;align-items:flex-start}
+}

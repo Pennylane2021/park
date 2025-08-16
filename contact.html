@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>박은경 팬사이트 - 연락</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- 헤더 -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title"><a href="index.html">박은경 팬사이트</a></h1>
+      <nav class="site-nav" aria-label="주요">
+        <a href="about.html">소개</a>
+        <a href="gallery.html">갤러리</a>
+        <a href="news.html">소식</a>
+        <a href="contact.html">연락</a>
+      </nav>
+      <button id="themeToggle" aria-pressed="false" class="theme-btn">다크</button>
+    </div>
+  </header>
+
+  <!-- 메인 -->
+  <main class="container section">
+    <h2>팬레터 / 연락</h2>
+    <form id="contactForm" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+      <label>이름 <input type="text" name="name" required></label>
+      <label>이메일 <input type="email" name="email" required></label>
+      <label>내용 <textarea name="message" rows="5" required></textarea></label>
+      <button type="submit">보내기</button>
+    </form>
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> 박은경 팬사이트</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -7,13 +7,14 @@ title: "홈"
 
 취미와 기록을 모아놓은 공간이에요.
 
-- [About Me](about)
+- [About Me]({{ site.baseurl }}/about)
 
 ## 최근 글
 <ul>
 {% for post in site.posts %}
   <li>
-    <a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date: "%Y-%m-%d" }})
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    ({{ post.date | date: "%Y-%m-%d" }})
   </li>
 {% endfor %}
 </ul>
